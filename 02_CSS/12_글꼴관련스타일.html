@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글꼴 관련 스타일</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    
+    <style>
+
+        /* 웹 폰트 적용2 */
+        @font-face {
+            font-family: 'CWDangamAsac-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BMEuljiro10yearslater';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/BMEuljiro10yearslater.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* font-family 속성 */
+        #font-test > p:nth-child(1){ font-family: "궁서체";}
+
+        #font-test > p:nth-child(2){ font-family: "나눔고딕";}
+        /* 없는 폰트이면 기본 글꼴 */
+
+        #font-test > p:nth-child(3){ font-family: "없는폰트", "굴림";}
+        /* 여러 폰트를 적어서 앞에 폰트가 없으면 뒤쪽 폰트가 적용됨 */
+
+        /* 웹 폰트 테스트 */
+        #webfont-test > p:nth-child(1){ font-family: 'Gaegu', cursive; }
+        #webfont-test > p:nth-child(2){ font-family: 'CWDangamAsac-Bold'; }
+        #webfont-test > p:nth-child(3){ font-family: 'BMEuljiro10yearslater'; }
+    </style>
+
+</head>
+<body>
+    <h3>font-family 속성 : 글꼴(폰트)을 지정하는 속성</h3>
+
+    <div id="font-test">
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+    </div>
+    
+    <h3>** 웹 폰트 사용법 **</h3>
+    <p>웹 폰트 제공 사이트1: <a href="http://fonts.google.com" target="_blank">구글 웹폰트 사이트로</a></p>
+    <div id="webfont-test">
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+        <p>글꼴 변경 테스트: 가나다라, ABCD, abcd, 1234, 우희수</p>
+    </div>
+    
+    <p>웹 폰트 제공 사이트1: <a href="https://noonnu.cc/" target="_blank">눈누 상업용 무료 한글폰트 사이트로</a></p>
+</body>
+</html>

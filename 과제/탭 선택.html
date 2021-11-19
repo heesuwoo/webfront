@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 선택</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        #btn-box{
+            background-color: black;
+            height: 10%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn{
+            background-color: gray;
+            border: 1px solid black;
+            width: 50px;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+        }
+        #content{
+            width: 100%;
+            height: 10%;
+            border: 1px solid black;
+        }
+        .img{
+            width: 100%;
+            height: 80%;
+            border: 1px solid black;
+            display: none;
+        }
+
+        .click{
+            background-color: #ccc;
+        }
+        h3{
+            margin: 0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="btn-box">
+            <div class="btn" id="1">1번탭</div>
+            <div class="btn" id="2">2번탭</div>
+            <div class="btn" id="3">3번탭</div>
+        </div>
+        <div id="content">
+            <h3 id="1-h3">1번 이미지 입니다.</h3>
+            <h3 id="2-h3">2번 이미지 입니다.</h3>
+            <h3 id="3-h3">3번 이미지 입니다.</h3>
+        </div>
+        <div id="img">
+            <img class="img" id="1-img" src="/04_JQuery/images/cat.gif">
+            <img class="img" id="2-img" src="/04_JQuery/images/cute1.gif">
+            <img class="img" id="3-img" src="/04_JQuery/images/pikachu.gif">
+            
+        </div>
+    </div>
+
+
+    <!-- 체크박스 -->
+    
+    <div>
+        <input type="checkbox" name="whole" id="whole"><label for="whole">전체</label>
+        <input type="checkbox" name="whole" id="A"><label for="A">A팀</label>
+        <input type="checkbox" name="whole" id="B"><label for="B">B팀</label>
+    </div>
+    
+    <hr>
+    
+    <input type="checkbox" name="whole" id="A-1" class="A chk"><label for="A-1">A팀</label> <br>
+    <input type="checkbox" name="whole" id="B-1" class="B chk"><label for="B-1">B팀</label> <br>
+    <input type="checkbox" name="whole" id="A-2" class="A chk"><label for="A-2">A팀</label> <br>
+    <input type="checkbox" name="whole" id="B-2" class="B chk"><label for="B-2">B팀</label> <br>
+    <input type="checkbox" name="whole" id="A-3" class="A chk"><label for="A-3">A팀</label> <br>
+    <input type="checkbox" name="whole" id="A-4" class="A chk"><label for="A-4">A팀</label> <br>
+    <input type="checkbox" name="whole" id="B-3" class="B chk"><label for="B-3">B팀</label> <br>
+    <input type="checkbox" name="whole" id="B-4" class="B chk"><label for="B-4">B팀</label>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(".btn").on("click", function(){
+            const imgs = $(".img");
+            const img = $("#"+this.id+"-img");
+            const h3s = $("h3");
+            const h3 = $("#"+this.id+"-h3");
+            
+            if(img.css("display")=="none"){
+                $(this).addClass("click");
+                $(this).siblings("div").removeClass("click");
+                imgs.css("display","none");
+                h3s.css("display","none");
+                h3.css("display","block");
+                img.css("display","block");
+            }
+        });
+
+       /*  document.getElementById("whole").addEventListener("change", function(){
+
+            const whole = document.getElementsByName("whole");
+
+            if(whole[0].checked == true){
+                for(let i=0; i<whole.length; i++){
+                    whole[i].checked = true;
+                }
+            } else{
+                for(let i=0; i<whole.length; i++){
+                    whole[i].checked = false;
+                }
+            }
+        }); */
+
+        $("#whole").on("change", function(){
+            
+            if($(this).prop("checked") == true){
+                $('[name="whole"]').prop("checked",true)
+            }else{
+                
+                $('[name="whole"]').prop("checked",false)
+            }
+        });
+        
+        // document.getElementById("A").addEventListener("change", function(){
+        //     const Ateam = document.getElementById("A");
+        //     const A = document.getElementsByClassName("A");
+
+        //     if(Ateam.checked == true){
+        //         for(let i=0; i<A.length; i++){
+        //             A[i].checked = true;
+        //         }
+        //     } else{
+        //         for(let i=0; i<A.length; i++){
+        //             A[i].checked = false;
+        //         }
+        //     }
+        // });
+
+        $("#A").on("change", function(){
+            
+            if($(this).prop("checked") == true){
+                $(".A").prop("checked",true);
+            }else{
+                $(".A").prop("checked",false);
+                $("#whole").prop("checked", false);
+            }
+        });
+        
+        // document.getElementById("B").addEventListener("change", function(){
+        //     const Bteam = document.getElementById("B");
+        //     const B = document.getElementsByClassName("B");
+
+        //     if(Bteam.checked == true){
+        //         for(let i=0; i<B.length; i++){
+        //             B[i].checked = true;
+        //         }
+        //     } else{
+        //         for(let i=0; i<B.length; i++){
+        //             B[i].checked = false;
+        //         }
+        //     }
+        // });
+
+        $("#B").on("change", function(){
+            
+            if($(this).prop("checked") == true){
+                $(".B").prop("checked",true);
+            }else{
+                
+                $(".B").prop("checked",false);
+                $("#whole").prop("checked", false);
+            }
+        });
+
+        $(".chk").on("change", function(){
+
+            console.log( $(this).prop("cheked") );
+
+            // 현재 클릭한 체크박스의 체크가 해제된 경우
+            if(!$(this).prop("cheked")){
+                $('[name="whole"]').prop("checked",false);  //전체 체크 해제
+
+                if($(this).hasClass("A")){
+                    // 현재 요소가 "A" 클래스를 가지고 있는경우
+                    // A팀 전체를 나타내는 체크박스 체크 해제
+                    $(".A").prop("checked", false);
+                }else if($(this).hasClass("B")){
+                    $(".B").prop("checked", false);
+                }
+            }
+
+            if($(".A:checked").length == $(".A").length){
+                $("#A").prop("checked", true);
+            }
+
+            if($(".B:checked").length == $(".B").length){
+                $("#B").prop("checked", true);
+            }
+
+            if($(".chk:checked").length == $(".chk").length){
+                $('[name="whole"]').prop("checked", true);
+            }
+
+        });
+
+    </script>
+</body>
+</html>

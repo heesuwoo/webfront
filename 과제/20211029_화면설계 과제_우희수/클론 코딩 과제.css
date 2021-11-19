@@ -1,0 +1,309 @@
+*:not(body,html){
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+header{
+    width: 60%;
+    
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#logo-div{
+    width: 22%;
+    height: 3%;
+
+    float: left;
+
+    margin-top: 5%;
+}
+
+#logo{
+    width: 125px;
+    height: 30px;
+    float: left;
+}
+
+#search{
+    width: 40%;
+    height: 40px;
+    float: left;
+    margin-top: 5%;
+    margin-bottom: 2%;
+
+    border-bottom: 1px solid gray;
+}
+
+#search > img{
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin: 0;
+    margin-top: 5px;
+}
+
+header input{
+    height: 100%;
+    float: left;
+    margin-left: 2%;
+    font-size: 17px;
+    color: rgb(224, 224, 224);
+    font-weight: bold;
+    border: none;
+}
+
+.login{
+    float: right;
+    margin-top: 7%;
+    margin-right: 2%;
+}
+
+.login *{
+    margin-left: 30px;
+    color: gray;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    clear: both;
+}
+
+.nav-margin{
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+#category a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+/* O */
+.nav-margin ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 200px;
+    height: 100%;
+
+    float: left;
+
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+/* o */
+#category > li{
+    width: 100%;
+    height: 100%;
+    
+    float: left;
+}
+
+#category > li > ul{
+    height: 0;
+    position: absolute;
+    z-index: 10;
+    margin-top: 48px;
+}
+
+#category > li > a{
+    width: 75%;
+    height: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    
+    text-decoration: none;
+    line-height: 48px;
+    
+    float: left;
+    padding-left: 20px;
+}
+
+#category a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#category > li > ul > li{
+    height: 0;
+}
+
+#category > li > ul > li > a{
+    display: none;
+    background-color: white;
+    line-height: 47px;
+    border: 1px solid #ccc;
+}
+
+#category > li:hover ul > li{
+    height: 50px;
+}
+
+#category > li:hover ul > li > a{
+    display: block;
+}
+
+#category > li > ul > li {
+    transition-duration: 0.3Ss;
+}
+
+#category > li > p {
+    width: 20%;
+    height: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 47px;
+    float: left;
+    margin: 0;
+    margin-right: 5%;
+}
+
+#nav2{
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    margin-left: 5px;
+    float: left;
+}
+
+#nav2 :hover, #nav3 > div :hover{
+    font-weight: bold;
+}
+
+#nav2 > a{
+    color: black;
+    text-decoration: none;
+    margin-left: 5px;
+    line-height: 47px;
+}
+
+#nav3{
+    height: 100%; 
+    width: 350px;
+    float: right;
+}
+
+#nav3 > div{
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 44px;
+
+}
+
+#nav3 > div:nth-child(2){
+    background-color: #0484F6;
+}
+
+#nav3 > div:nth-child(2):hover{
+    background-color: #0477DD;
+}
+
+#nav3-1{
+    text-decoration: none;
+    color: black;
+
+}
+#nav3-2{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.left{
+    width: 20%;
+    height: 800px;
+
+    float: left;
+}
+
+.left > img{
+    width: 30%;
+    height: 25%;
+    
+    margin-top: 25px;
+    margin-right: 25px;
+
+    border: 1px solid #ccc;
+    float: right;
+}
+
+section{
+    width: 60%;
+
+    
+    float: left;
+}
+
+section > img{
+    width: 100%;
+    height: 200px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+section > table{
+    width: 100%;
+    height: 300px;
+    border-spacing: 10px;
+}
+
+section > table td{
+    border-radius: 5%;
+    width: 10%;
+    height: 10%;
+}
+
+section > table td > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+#item{
+    /* margin-bottom: 2%; */
+    margin-top: 2%;
+
+}
+
+#price{
+    margin-top: 0;
+    font-size: 20px;
+    color: gray;
+    font-weight: bold;
+}
+
+.right{
+    width: 20%;
+    height: 800px;
+
+    float: right;
+}
+
+.right > img{
+    width: 50%;
+    height: 80%;
+
+    margin-top: 25px;
+    margin-left: 25px;
+}

@@ -1,0 +1,187 @@
+img{
+    width: 250px;
+    height: 200px;
+}
+
+/* css 속성 작성 시 크로스 브라우저(브라우저가 달라지는 경우) 처리를 위한 방법 제공 
+    -ms-: 마이크로 소프트(익스플로러 9, Edge)
+    -webkit-: 크롬, 사파리
+    -o-: 오페라
+    -moz-: 파이어폭스
+*/
+
+/* 좌우로(X축) 움직이기 */
+.trans1:hover{
+    -ms-transform: translateX(50px);
+    -webkit-transform: translateX(50px);
+
+    transform: translateX(50px);
+    /* 양수: 오른쪽, 음수: 왼쪽 */
+}
+
+/* 상하로(Y축) 움직이기 */
+.trans2:hover{
+    -ms-transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+
+    transform: translateY(50px);
+    /* 양수: 아래쪽, 음수: 위쪽 */
+}
+
+/* 대각선으로 움직이기 */
+.trans3:hover{
+    transform: translateX(50px);
+    transform: translateY(50px);
+    /* 하나의 요소에는 하나의 transform만 적용된다! */
+
+    -ms-transform: translate(50px, 100px);
+    -webkit-transform: translate(50px, 100px);
+    transform: translate(50px, 100px);
+                      /* x축,  y축  */
+}
+
+/* 가로로 확대 축소하기 */
+.trans4{
+    margin-left: 150px;
+}
+.trans4:hover{
+    -ms-transform: scaleX(2);
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2);
+                 /* 배율 */
+}
+
+/* 세로로 확대 축소하기 */
+.trans5{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.trans5:hover{
+    -ms-transform: scaleY(2);
+    -webkit-transform: scaleY(2);
+    transform: scaleY(2);
+                 /* 배율 */
+}
+
+/* 전체적인 확대 축소하기 */
+.trans6{
+    margin:150px;
+}
+.trans6:hover{
+    -ms-transform: scale(2,2);
+    -webkit-transform: scale(2,2);
+    transform: scale(2,2);
+                 /* x축,y축 */
+    cursor: pointer;
+}
+
+.trans6:active{
+    border: 3px solid rgba(255, 0, 0, 0.3);
+}
+
+/* 지정한 각도로 회전하기 */
+.trans7:hover{
+    transform: rotate(180deg);
+    /* 양수: 시계 방향, 음수: 반시계 방향 */
+}
+
+/******* 3차원 변형 *******/
+.trans1-3d{
+    margin: 200px;
+}
+.trans1-3d:hover{
+    transform: perspective(300px) translate3d(50px, 50px, 100px);
+                    /* 떨어진 거리 */      /* x      y      z */     
+}
+
+/* x 축 회전 */
+.trans2-3d:hover{
+    transform: perspective(300px) rotateX(45deg);
+}
+/* y 축 회전 */
+.trans3-3d:hover{
+    transform: perspective(300px) rotateY(45deg);
+}
+/* z 축 회전 */
+.trans4-3d:hover{
+    transform: perspective(300px) rotateZ(45deg);
+}
+/* x,z,y 축 회전 */
+.trans5-3d{
+    transform: perspective(300px) rotate3d(0.5,0.5,0.5,45deg);
+}
+
+/****** transition ******/
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 1px solid black;
+    
+    /* 스타일이 변경되는 시간 지정 */
+    transition-duration: 2s;
+}
+
+.test1:hover{
+    background-color: yellow;
+
+    /* 스타일이 변경되는 시간 지정 */
+    /* transition-duration: 2s; */
+}
+
+.test2:hover{
+    transform: rotate(1080deg);
+}
+
+.test3{
+    margin: 100px;
+}
+.test3:hover{
+    width: 150px;
+    height: 150px;
+
+    transform: rotate(720deg);
+    background-color: blue;
+
+    /* border-radius: 25%; */
+    border-top-left-radius: 20%;
+    border-top-right-radius: 80%;
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 20%;
+}
+
+.test4:hover{
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    transform: rotate(360deg);
+
+    /* 트랜지션 효과를 적용할 css 속성을 지정 */
+    transition-property: width, height, background-color, transform;
+
+    /* 지정된 속성 순서대로 변형 시간을 부여할 수 있다. */
+    transition-duration: 10s, 2s, 5s, 3s;
+}
+
+.test5:hover{
+    transform: rotate(1080deg);
+    background-color: yellowgreen;
+    
+    /*  linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n) */
+    /* transition-timing-function: cubic-bezier(0.3, 0.7, 0.1, 0.5);    n = 0~1 */
+
+    /* transition-timing-function: linear; 일정한 속도 */
+    /* transition-timing-function: ease; 기본 값, 천천히 시작, 점점 빠르게, 마지막 느리게 */
+    /* transition-timing-function: ease-in; 천천히 시작, 점점 빠르게 */
+    /* transition-timing-function: ease-out; 빠르게 시작, 점점 느리게 */
+    transition-timing-function: ease-in-out; /* 천천히 시작, 점점 빠르게, 마지막 느리게 */
+}
+
+.test6{margin-top: 100px;}
+.test6:hover{
+    margin-left: 400px;
+    transform: rotate(360deg);
+
+    /* 일정 시간 후 변형되도록 연기(딜레이) */
+    transition-delay: 1s;
+}

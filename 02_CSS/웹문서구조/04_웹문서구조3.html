@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조3</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <div>
+                <a href="04_웹문서구조3.html">
+                    <img src="images/logo1.jpg" id="home-logo" alt="로고">
+                </a>
+            </div>
+
+            <!-- 검색폼 -->
+            <div>
+                <form id="search-form"> <!-- div + 서버 제출 -->
+                    <div>
+                        <input type="search" name="searchValue">
+                    </div>
+                    
+                    <div>
+                        <button>검색</button>   <!-- 기본값: type ="submit" -->
+                    </div>
+                </form>
+            </div>
+            <div></div>
+        </div>
+
+        <!-- 내비게이터 navigator -->
+        <div class="nav">
+            <ul id="navi">
+                <li> <a href="#">Java</a> </li>
+                <li> <a href="#">Oracle</a> </li>
+                <li> 
+                    <a href="#">Front-End</a> 
+                    <ul>
+                        <li><a href="#">HTML 5</a></li>
+                        <li><a href="#">CSS3</a></li>
+                        <li><a href="#">JS</a></li>
+                        <li><a href="#">jQuery</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li> <a href="#">Server</a> </li>
+                <li> <a href="#">Framework</a> </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div></div>
+            
+            <!-- 썸네일 + 제목 + 내용 목록 -->
+            <div>
+                <ul class="th-list">
+                    <li>
+                        <!-- 썸네일 영역 -->
+                        <a href="#">
+                            <img src="images/flower1.PNG">    <!-- 썸네일 이미지 -->
+                        </a>
+
+                        <!-- 제목, 내용 영역 -->
+                        <div class="title-content">
+                            <h4><a href="#">제목</a></h4>   <!-- 제목 -->
+                            <p>내용</p> <!-- 내용 -->
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="images/flower2.PNG">
+                        </a>
+                        <div class="title-content">
+                            <h4><a href="#">제목</a></h4>
+                            <p>내용</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="images/flower3.PNG">
+                        </a>
+                        <div class="title-content">
+                            <h4><a href="#">제목</a></h4>
+                            <p>내용</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="images/flower4.PNG">
+                        </a>
+                        <div class="title-content">
+                            <h4><a href="#">제목</a></h4>
+                            <p>내용</p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- 로그인 폼 -->
+            <div>
+                <div id="login-area">
+                    <form id="login-form">  <!-- 아이디, 비밀번호, 로그인 버튼 -->
+                        <div>   <!-- 아이디, 비밀번호 입력 영역 -->
+                            <div><input type="text" name="inputId" placeholder="ID 입력"></div>
+                            <div><input type="password" name="inputPw" placeholder="PW 입력"></div>
+                        </div>
+        
+                        <div>   <!-- 버튼 영역 -->
+                            <button>로그인</button>
+                        </div>
+                    </form>
+        
+                    <div>   <!-- 회원가입, 아이디/비밀번호 찾기 -->
+                        <a href="#">회원가입</a>
+                        <a href="#">ID/PW 찾기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+
+    </div>
+</body>
+</html>

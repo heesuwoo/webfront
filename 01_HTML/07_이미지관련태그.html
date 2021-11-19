@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 반응형 웹을 구현하기 위한 내용 -->
+        <title>이미지 관련 태그</title>
+    </head>
+
+    <body>
+        <h1>이미지 관련 태그</h1>
+        <h3>img 태그: HTML문서(== 웹문서, 웹페이지)에 사진, 그림을 삽입할 때 사용하는 태그</h3>
+
+        <pre>
+            img 태그 속성
+            1) src: 삽입할 이미지 경로를 지정하는 속성(컴퓨터 내부 경로, url)
+            2) width: 이미지의 너비(폭, 가로길이)를 지정하는 속성
+            3) height: 이미지의 높이(세로 길이)를 지정하는 속성
+            4) alt: 이미지를 설명하는 속성. 이미지가 출력되지 않는 경우 화면에 표시됨.
+        </pre>
+
+        <hr>
+
+        <h3>img 태그 활용하기</h3>
+        <img src="image/river1.PNG">
+        <hr>
+
+        <h4>img 태그에 width, height 중 하나의 크기만을 지정하는 경우 <br>
+            지정되지 않은 방향의 크기도 같은 비율로 조정된다.
+        </h4>
+        <img src="image/river1.PNG" width="400px">
+        <hr>
+        
+        <img src="image/river1.PNG" height="200px">
+        <hr>
+        
+        <h4>width, height를 모두 지정하는 경우 이미지 비율을 무시하고 지정된 크기로 화면에 출력된다.</h4>
+        <img src="image/river2.PNG" width="300px" height="300px">
+        <hr>
+
+        <img src="https://t1.daumcdn.net/cfile/blog/2455914A56ADB1E315" width="400px">
+        <hr>
+
+        <h4>alt 속성 확인하기</h4>
+        <img src="image/river02.PNG" alt="이미지 오류">
+
+        <hr>
+        <hr>
+
+        <h4>
+            1. 이미지의 크기가 화면을 벗어나는 경우 <br>
+                1) 이미지 1장인 경우: 좌우 스크롤바 생성 <br>
+                2) 이미지 여러 장인 경우: 화면 크기를 벗어난 이미지를 다음 줄로 이동
+            <br>
+            2. img 태그는 inline(화면을 수평 분할) 형식의 태그이다. <br>
+               -> inline 형식 태그는 기본적으로 크기 지정이 불가능하나, <br>
+                  이미지 또는 멀티 미디어 관련 태그는 크기 지정이 가능하다!
+            </h4>
+        <img src="image/flower1.PNG" alt="">
+        <img src="image/flower2.PNG" alt="">
+        
+        <hr><hr>
+
+        <h2>고정 크기 단위, 가변 크기 단위</h2>
+
+        <h3>1) 고정 크기 단위: 화면 크기에 관계없이 지정된 값 만큼의 크기가 지정되는 단위
+            <br>
+            (px(픽셀): 화면 내부에 색을 표현하는 작은 전구 하나를 1px)
+        </h3>
+        
+        <img src="image/flower1.PNG" width="200px" height="150px">
+        <img src="image/flower2.PNG" width="200px" height="150px">
+        <img src="image/flower3.PNG" width="200px" height="150px">
+        <img src="image/flower4.PNG" width="200px" height="150px">
+        <img src="image/flower5.PNG" width="200px" height="150px">
+
+        <hr>
+
+        <h3>2) 가변 크기 단위: 화면 또는 지정된 영역의 기준 사이즈에 따라 변경되는 단위
+            <br>
+            (%: 부모 요소로 부터 지정된 퍼센티지 만큼의 크기를 지정하는 단위)
+            <!-- em, rem, vh, vw -->
+        </h3>
+
+        <img src="image/flower1.PNG" width="15%" height="150px">
+        <img src="image/flower2.PNG" width="15%" height="150px">
+        <img src="image/flower3.PNG" width="15%" height="150px">
+        <img src="image/flower4.PNG" width="15%" height="150px">
+        <img src="image/flower5.PNG" width="15%" height="150px">
+    </body>
+</html>

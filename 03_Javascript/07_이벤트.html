@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        /* 채팅창 만들기 */
+        #chatting-window{
+            width: 360px;
+            height: 400px;
+            background-color: rgb(178, 199, 217);
+            border: 1px solid black;
+
+            /* 내용이 요소의 크기를 넘어갔을 때에 대한 속성 */
+            overflow: auto; /* 평상시에는 변화가 없다가 넘어가면 스크롤 생성 */
+        }
+
+        #chatting-window > p {
+            background-color: rgb(254, 234, 51);
+            margin: 10px;  /* 다른 요소와의 간격을 10px로 지정 */
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>이벤트(Event)</h1>
+    <pre>
+        이벤트(Event): 동작, 행위
+        ex) 클릭(click), 마우스오버(mouseover), 키다운(keydown), 키업(keyup)...
+
+        이벤트 리스너(Event Listener) : 동작, 행위를 감지(~~ 했을 때)
+                                        + 동작 발생 시 연결된 기능을 수행
+        - on + Event(행위) 붙여서 부름.
+
+        ex) onclick(클릭했을때), onmouseover(마우스가 올라왔을때)...
+
+        이벤트 핸들러(Event Handler)
+        - 이벤트 리스너에 연결된 기능(함수)
+        - 이벤트 발생 시 수행하고자 하는 내용을 작성해 둠
+    </pre>
+    
+    <hr>
+
+    <h2>인라인 이벤트 모델</h2>
+    <pre>
+        HTML 태그에 직접 이벤트(이벤트 리스너)를 작성하는 방법
+
+        on이벤트명 = 함수명();  형태
+    </pre>
+
+    <button onclick="test1()">인라인 이벤트 모델 확인</button>
+
+    <hr>
+    <h2>고전 이벤트 모델</h2>
+    <pre>
+        요소가 가지고 있는 이벤트 속성에 이벤트 핸들러를 연결하는 방법으로
+        인라인 모델과 다르게 script로만 작성할 수 있음
+    </pre>
+
+    <button id="test2-1">고전 이벤트 모델 확인</button>
+    <button id="test2-2">고전 이벤트 모델 제거</button>
+    <button id="test2-3">고전 이벤트 모델 살리기 </button>
+
+    <div id="area1"></div>
+
+    <hr>
+
+    <h2>고전 이벤트 모델 활용(복습)</h2>
+
+    <button id="add-btn">추가</button>
+    <div id="add-area">
+        <!-- 
+        <div>
+            <div class="box" id="add-1"></div>
+            <input type="text" id="input-1">
+            <button id="btn-1">확인</button>
+        </div>
+        -->
+    </div>
+
+    <hr>
+
+    <button id="add2">추가</button>
+    <div id="practice-area">
+        <!-- <div>
+            <input type="text" id="input2-1" size="10">
+            <button id="btn2-1">변경</button>
+        </div> -->
+    </div>    
+
+    <hr>
+    <h2>이벤트 발생 객체</h2>
+    <pre>
+        이벤트 발생 객체는 이벤트 핸들러의 매개변수로 이벤트 정보를 전달함.
+        (매개변수명 e 또는 event) 또는 window.event)
+    </pre>
+    <button id="test-btn">테스트용 버튼</button>
+
+    <hr>
+    <h2>고전 이벤트 모델의 문제점</h2>
+    <pre>
+        고전 이벤트 모델( 요소.on이벤트 )은
+        하나의 요소에 같은 이벤트리스너에 대한 동작을 여러 개 지정할 수 없다.
+        -> 여러 동작을 지정한 경우 마지막 내용만 적용된다.
+    </pre>
+
+    <button id="test-btn2">문제점 확인</button>
+
+    <hr>
+    <h2>표준 이벤트 모델(addEventListener("이벤트명", 이벤트 핸들러(함수)))</h2>
+    <pre>
+        - W3C에서 공식적으로 지정한 이벤트 모델 (표준)
+
+        - 고전 이벤트 모델의 단점인 하나의 리스너에 하나의 핸들러만 설정하는 것을 보완.
+
+        - IE는 9버전 이상부터만 사용 가능
+    </pre>
+
+    <button id="standard-btn">표준 이벤트 모델 확인</button>
+
+    <hr><hr>
+
+    <h2>채팅창 모양 만들기</h2>
+
+    <!-- 채팅이 입력될 영역 -->
+    <div id="chatting-window">
+        <!-- <p>여기에 입력된 내용이 작성됩니다.</p>
+        <p>하나가 아니라 여러개</p>
+        <p>이제 점심시간이다!</p> -->
+    </div>
+
+    <!-- 작성한 내용이 입력되는 input 태그 -->
+    <input type="text" id="input-text" size="50">
+    <button id="input-btn">입력</button>
+
+
+
+
+
+    <script src="js/07_이벤트.js"></script>
+</body>
+</html>
